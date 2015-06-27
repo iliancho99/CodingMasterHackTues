@@ -1,4 +1,40 @@
 <div class="container">
     <div site-header></div>
-    Forum
+    <form class="panel">
+        <div class="addPost">
+            <div class="form-group">
+                <label for="postTitle">Title:</label>
+                <input id="postTitle" class="form-control"  placeholder="Enter title of your post..."/>
+            </div>
+            <div class="form-group">
+                <label for="postTheme">Theme:</label>
+                <input id="postTheme" class="form-control" placeholder="Enter theme of your post..."/>
+            </div>
+
+            <div class="form-group">
+                <label for="postText">Text:</label>
+                <textarea rows="6" id="postText" class="form-control" placeholder="Enter text of your post..." style=" resize: none"></textarea>
+            </div>
+
+            <div class="form-group">
+
+                    <button type="submit" class="btn btn-primary" ng-click="">Add post</button>
+
+            </div>
+        </div>
+    </form>
+
+
+    <div class="post" ng-repeat="post in posts">
+        <a href="#/post/{{post.objectId}}">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <span class="PostAuthor">{{post.author}}</span>
+                    <div class="PostTitle">{{post.title}}</div>
+                </div>
+            </div>
+        </a>
+    </div>
+    <div>
+    </div>
 </div>

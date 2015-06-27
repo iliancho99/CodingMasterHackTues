@@ -2,3 +2,48 @@
 	height: 100px;
 	padding: 3px;
 }
+
+.PostAuthor
+{
+    font-family: Helvetica;
+    font-size: 10px;
+}
+.PostTitle
+{
+    font-family: Arial;
+    font-size: 22px;
+}
+
+.CommentAuthor
+{
+    font-family: Helvetica;
+    font-size: 10px;
+}
+
+.CommentText
+{
+    font-family: Menlo;
+    font-size: 18px;
+}
+
+.post
+{
+    margin: 25px;
+}
+
+.panel
+{
+    border: 6px groove gray;
+    background-color: lightgrey;
+    color: sienna;
+}
+
+.addPost{
+    padding: 10px;
+}
+
+.panel-footer
+{
+    background-color: #adadad;
+    color: #dff0d8;
+}

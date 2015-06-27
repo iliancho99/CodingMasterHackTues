@@ -14,6 +14,14 @@ if(sessionStorage['sessionToken']){
                 controller: "forumController",
                 templateUrl: "partials/forum.html"
             })
+            .when('/post/:postId', {
+                controller: "postController",
+                templateUrl: "partials/post.html"
+            })
+            .when('/logout', {
+                controller: "logoutController",
+                templateUrl: "partials/logout.html"
+            })
             .otherwise({
                 redirectTo: "/"
             })
@@ -25,11 +33,11 @@ if(sessionStorage['sessionToken']){
                 templateUrl: "partials/welcome.html"
             })
             .when('/login', {
-                controller: "registerController",
+                controller: "loginController",
                 templateUrl: "partials/login.html"
             })
             .when('/register', {
-                controller: "loginController",
+                controller: "registerController",
                 templateUrl: "partials/register.html"
             })
             .otherwise({
