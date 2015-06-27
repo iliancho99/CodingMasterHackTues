@@ -8,19 +8,24 @@
 </head>
 <body ng-app="app">
 
-    <div ng-view>
-    </div>
+    <div ng-view></div>
+
     <script src="lib/angular/angular.js"></script>
     <script src="lib/angular/angular-route.js"></script>
     <script src="lib/jquery-2.1.1.js"></script>
+    <script src="lib/jquery.noty.js"></script>
     <script src="lib/bootstrap.js"></script>
 
     <script src="js/app.js"></script>
+
+
+    <script src="js/services/forumService.js"></script>
+    <script src="js/services/headersService.js"></script>
+    <script src="js/services/notifyService.js"></script>
+
     <script src="js/directives.js"></script>
     <script src="js/controllers/testHTMLController.js"></script>
+    <script src="js/controllers/forumController.js"></script>
 
-    <script src="partials/siteHeader.html"></script>
-    <script src="partials/home.html"></script>
-    <script src="partials/testHTML.html"></script>
 </body>
 </html>

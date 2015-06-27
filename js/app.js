@@ -9,7 +9,13 @@ app.config(function ($routeProvider) {
             controller: "testHTMLController",
             templateUrl: "partials/testHTML.html"
         })
+        .when('/forum', {
+            controller: "forumController",
+            templateUrl: "partials/forum.html"
+        })
         .otherwise({
             redirectTo: "/"
         })
 });
+
+app.constant('baseUrl', 'https://api.parse.com/1/');
