@@ -9,7 +9,7 @@ app.controller('registerController', ['$scope', 'userService','notifyService' , 
             userService.registerUser(user)
                 .success(function (data) {
                     sessionStorage['sessionToken'] = data.sessionToken;
-                    sessionStorage['username'] = data.username;
+                    sessionStorage['username'] = user.username;
                     window.location.reload();
                 })
                 .error(function (data) {

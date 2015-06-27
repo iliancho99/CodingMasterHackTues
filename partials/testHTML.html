@@ -1,7 +1,17 @@
-<div class="container">
+<div id="container">
     <div site-header></div>
-    <div>
-        <textarea cols="30" rows="10" ng-model="htmlCode" ng-change="changeHTML(htmlCode)"></textarea>
-        <div class="viewHTML"></div>
+    <p align="center"color="green">Here you can test your own code<p/>
+    <div class="row">
+        <div class="col-md-4">
+            <section>
+                <textarea cols="70" rows="10" ng-model="htmlCode" ng-change="changeHTML(htmlCode)" class="form-control"></textarea>
+            </section>
+        </div>
+        <div class="col-md-8">
+            <section>
+                <div class="viewHTML"></div>
+            </section>
+        </div>
     </div>
+
 </div>

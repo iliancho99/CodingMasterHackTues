@@ -3,7 +3,9 @@ app.factory('forumService', ['$http', 'headersService', 'baseUrl', function($htt
     return {
         getPostComments: getPostComments,
         getSinglePostData: getSinglePostData,
-        getAllPosts: getAllPosts
+        getAllPosts: getAllPosts,
+        addComment: addComment,
+        addPost: addPost
     };
 
     function getAllPosts(){
@@ -30,6 +32,26 @@ app.factory('forumService', ['$http', 'headersService', 'baseUrl', function($htt
             method: 'GET',
             headers: headers,
             url: baseUrl + 'classes/Post/' + postId
+        });
+    }
+
+    function addPost(post){
+        var headers = headersService.getHeaders();
+        return $http({
+            method: 'POST',
+            headers: headers,
+            url: baseUrl + 'classes/Post',
+            data: post
+        });
+    }
+
+    function addComment(comment){
+        var headers = headersService.getHeaders();
+        return $http({
+            method: 'POST',
+            headers: headers,
+            url: baseUrl + 'classes/Comment',
+            data: comment
         });
     }
 }]);

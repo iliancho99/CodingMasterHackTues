@@ -13,21 +13,21 @@
             <div class="panel-footer clearfix">
                 <div class="panel-body">
                     <div ng-repeat="comment in post.comments">
-                        <span class="CommentAuthor">Comment Author</span>
-                        <div class="CommentText">Mi bravo na teb </div>
+                        <span class="CommentAuthor">{{comment.author}}</span>
+                        <div class="CommentText">{{comment.text}}</div>
                         <hr/>
                     </div>
                     <form class="panel">
-                        <div class="addPost">
+                        <div class="addComment">
 
                             <div class="form-group">
                                 <label for="postText">Text:</label>
-                                <textarea rows="6" id="postText" class="form-control" placeholder="Enter text of your comment..." style=" resize: none"></textarea>
+                                <textarea rows="6" ng-model="addComment.text" id="postText" class="form-control" placeholder="Enter text of your comment..."></textarea>
                             </div>
 
                             <div class="form-group">
 
-                                <button type="submit" class="btn btn-primary" ng-click="">Add comment</button>
+                                <button type="submit" class="btn btn-primary" ng-click="commentAdd(post.objectId, addComment)">Add comment</button>
                             </div>
                         </div>
                     </form>
@@ -35,4 +35,5 @@
             </div>
         </div>
     </div>
+    <div site-footer></div>
 </div>

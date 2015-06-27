@@ -6,3 +6,13 @@ app.directive("siteHeader", function () {
     }
 });
 
+app.directive("siteFooter", function () {
+    return {
+        restrict: "EA",
+        templateUrl: 'partials/siteFooter.html',
+        replace: true
+    }
+});
+
+
+

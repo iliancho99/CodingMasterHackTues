@@ -4,22 +4,20 @@
         <div class="addPost">
             <div class="form-group">
                 <label for="postTitle">Title:</label>
-                <input id="postTitle" class="form-control"  placeholder="Enter title of your post..."/>
+                <input id="postTitle" class="form-control" ng-model="addPost.title"  placeholder="Enter title of your post..."/>
             </div>
             <div class="form-group">
                 <label for="postTheme">Theme:</label>
-                <input id="postTheme" class="form-control" placeholder="Enter theme of your post..."/>
+                <input id="postTheme" class="form-control" ng-model="addPost.theme" placeholder="Enter theme of your post..."/>
             </div>
 
             <div class="form-group">
                 <label for="postText">Text:</label>
-                <textarea rows="6" id="postText" class="form-control" placeholder="Enter text of your post..." style=" resize: none"></textarea>
+                <textarea rows="6" id="postText" ng-model="addPost.text" class="form-control" placeholder="Enter text of your post..."></textarea>
             </div>
 
             <div class="form-group">
-
-                    <button type="submit" class="btn btn-primary" ng-click="">Add post</button>
-
+                    <button type="submit" class="btn btn-primary" ng-click="postAdd(addPost)">Add post</button>
             </div>
         </div>
     </form>
@@ -37,4 +35,5 @@
     </div>
     <div>
     </div>
+    <div site-footer></div>
 </div>
