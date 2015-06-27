@@ -1,10 +1,4 @@
-.pesho {
-	color:red;
-}
-
-.pesho:hover {
-	color:blue 
-}
-.even_row {
-	background: red;
+.htmlWriter{
+	height: 100px;
+	padding: 3px;
 }
