@@ -2,17 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="20462980-694c-4f3e-ae69-ed8ca4342056" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/partials/siteFooter.html" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/app.css" afterPath="$PROJECT_DIR$/css/app.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/directives.js" afterPath="$PROJECT_DIR$/js/directives.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/partials/forum.html" afterPath="$PROJECT_DIR$/partials/forum.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/partials/login.html" afterPath="$PROJECT_DIR$/partials/login.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/partials/post.html" afterPath="$PROJECT_DIR$/partials/post.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/partials/register.html" afterPath="$PROJECT_DIR$/partials/register.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/controllers/testController.js" afterPath="$PROJECT_DIR$/js/controllers/testController.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/services/userService.js" afterPath="$PROJECT_DIR$/js/services/userService.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/partials/welcome.html" afterPath="$PROJECT_DIR$/partials/welcome.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="CodingMasterHackTues.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -46,8 +36,8 @@
       <file leaf-file-name="testController.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/controllers/testController.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.39726028">
-              <caret line="25" column="83" selection-start-line="25" selection-start-column="83" selection-end-line="25" selection-end-column="83" />
+            <state vertical-scroll-proportion="0.51317173">
+              <caret line="30" column="40" selection-start-line="30" selection-start-column="40" selection-end-line="30" selection-end-column="40" />
               <folding />
             </state>
           </provider>
@@ -734,8 +724,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/controllers/testController.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.39726028">
-          <caret line="25" column="83" selection-start-line="25" selection-start-column="83" selection-end-line="25" selection-end-column="83" />
+        <state vertical-scroll-proportion="0.51317173">
+          <caret line="30" column="40" selection-start-line="30" selection-start-column="40" selection-end-line="30" selection-end-column="40" />
           <folding />
         </state>
       </provider>

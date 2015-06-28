@@ -24,15 +24,17 @@ app.controller('testController', ['$scope', 'testService','notifyService', '$rou
                                 if (countdown <= 0) {
                                     checkAnswers();
                                     $('#' + testName + "_timer").text("Full Time");
+                                }else{
+                                    localStorage[testName + "CountDown"] = "" + countdown;
+                                    countdown--;
+                                    var min = Math.floor(countdown / 60);
+                                    var sec = countdown % 60;
+                                    min = sec == 0 ? min - 1 : min;
+                                    sec = sec == 0 ? 59 : sec - 1;
+                                    $('#' + testName + "_timer").text("Time left:" + min + ":" + (sec < 10 ? '0' + sec : sec));
+                                    console.log(countdown);
                                 }
-                                localStorage[testName + "CountDown"] = "" + countdown;
-                                countdown--;
-                                var min = Math.floor(countdown / 60);
-                                var sec = countdown % 60;
-                                min = sec == 0 ? min - 1 : min;
-                                sec = sec == 0 ? 59 : sec - 1;
-                                $('#' + testName + "_timer").text("Time left:" + min + ":" + (sec < 10 ? '0' + sec : sec));
-                                console.log(countdown);
+
                             }
 
                         }, 1000);
