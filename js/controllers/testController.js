@@ -9,22 +9,24 @@ app.controller('testController', ['$scope', 'testService','notifyService', '$rou
                     .success(function (data) {
                         questions = data.results;
                         $scope.test.questions = questions;
-                        var countdown = 300;
-                        var min = 5;
-                        var sec = 0;
+                        var countdown;
+                        var min;
+                        var sec;
 
-                        $("#wrapper").append('<p>');
+                        $("#wrapperTest").append('<p>');
                         var testName = "poll" + $scope.test.title;
 
                         var clock = setInterval(function(){
                             $('p').text("Time left:" + min + ":" + (sec < 10 ? '0' + sec : sec));
-                            if(countdown == 0){
+                            if(countdown <= 0){
                                 checkAnswers();
                             }
 
                             countdown--;
+                            localStorage[testName + "CountDown"] = "" + countdown;
                             min = sec == 0 ? min - 1 : min;
                             sec = sec == 0 ? 59 : sec - 1;
+                            console.log(countdown);
                         }, 1000);
 
                         var orderList = $('<ol>');
@@ -58,18 +60,26 @@ app.controller('testController', ['$scope', 'testService','notifyService', '$rou
                             checkAnswers();
                         });
 
-                        $('#wrapper').append(orderList);
-                        $('#wrapper').append(btn);
+                        $('#wrapperTest').append(orderList);
+                        $('#wrapperTest').append(btn);
 
                         if(!localStorage[testName]){
                             var poll = {};
                             for (var i = 0; i < questions.length; i++) {
                                 poll[i] = " ";
                             }
+                            countdown = 300;
+                            min = 5;
+                            sec = 0;
+                            localStorage[testName + "CountDown"] = countdown;
 
                             storageService.setObjectToLocalStorage(testName, poll);
                         }else{
                             loadAnswers();
+                            countdown = +localStorage[testName + "CountDown"];
+                            min = Math.floor(countdown / 60);
+                            sec = countdown % 60;
+                            console.log(countdown, testName);
                         }
 
                         function saveUserAnswers(question, answer) {
@@ -92,6 +102,8 @@ app.controller('testController', ['$scope', 'testService','notifyService', '$rou
                         function checkAnswers(){
                             clearInterval(clock);
                             var answers =  storageService.getObjectToLocalStorage(testName);
+                            delete localStorage[testName + "CountDown"];
+                            delete localStorage[testName];
                             for (var q in answers) {
                                 var name = q;
                                 var value = answers[q];
