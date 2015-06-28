@@ -48,3 +48,8 @@
     background-color: lightgrey;
     color: sienna;
 }
+
+textarea
+{
+    resize: none;
+}

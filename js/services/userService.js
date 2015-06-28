@@ -19,6 +19,7 @@ app.factory('userService', ['$http', 'headersService', 'baseUrl', function($http
     function loginUser(user){
         var headers = headersService.getHeaders();
         var data = '?username=' + user.username + '&password=' + user.password;
+        //headers['X-Parse-Revocable-Session'] = '1';
         return $http({
             method: 'GET',
             headers: headers,

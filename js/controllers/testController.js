@@ -5,31 +5,40 @@ app.controller('testController', ['$scope', 'testService','notifyService', '$rou
         testService.getTest(testId)
             .success(function (data) {
                 $scope.test = data;
+                var testName = "poll" + data.objectId;
+                var min;
+                var sec;
+                var countdown;
+                localStorage['currentTest'] = data.objectId;
                 testService.getQuestions(testId)
                     .success(function (data) {
                         questions = data.results;
                         $scope.test.questions = questions;
-                        var countdown;
-                        var min;
-                        var sec;
 
-                        $("#wrapperTest").append('<p>');
-                        var testName = "poll" + $scope.test.title;
+                        $("#wrapperTest").append('<p id="'+ testName +'_timer">');
+
 
                         var clock = setInterval(function(){
-                            $('p').text("Time left:" + min + ":" + (sec < 10 ? '0' + sec : sec));
-                            if(countdown <= 0){
-                                checkAnswers();
+                            if(localStorage['currentTest'] == $routeParams.testId) {
+
+                                if (countdown <= 0) {
+                                    checkAnswers();
+                                    $('#' + testName + "_timer").text("Full Time");
+                                }
+                                localStorage[testName + "CountDown"] = "" + countdown;
+                                countdown--;
+                                var min = Math.floor(countdown / 60);
+                                var sec = countdown % 60;
+                                min = sec == 0 ? min - 1 : min;
+                                sec = sec == 0 ? 59 : sec - 1;
+                                $('#' + testName + "_timer").text("Time left:" + min + ":" + (sec < 10 ? '0' + sec : sec));
+                                console.log(countdown);
                             }
 
-                            countdown--;
-                            localStorage[testName + "CountDown"] = "" + countdown;
-                            min = sec == 0 ? min - 1 : min;
-                            sec = sec == 0 ? 59 : sec - 1;
-                            console.log(countdown);
                         }, 1000);
 
                         var orderList = $('<ol>');
+                        document.getElementById("wrapperTest").classList.add('panel');
                         orderList.append($('<h1>').text("Quetions:"));
                         orderList.on("click", function(e){
                             var question = $(e.target).attr("name"),
@@ -53,7 +62,7 @@ app.controller('testController', ['$scope', 'testService','notifyService', '$rou
                             orderList.append(list);
                         }
 
-                        var btn = $('<button>');
+                        var btn = $('<button class="btn btn-primary">');
                         btn.text('Submit');
                         btn.on('click', function(){
                             $('span').css('background', 'white');
@@ -72,6 +81,7 @@ app.controller('testController', ['$scope', 'testService','notifyService', '$rou
                             min = 5;
                             sec = 0;
                             localStorage[testName + "CountDown"] = countdown;
+                            console.log("Initialize test " + testName);
 
                             storageService.setObjectToLocalStorage(testName, poll);
                         }else{

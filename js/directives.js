@@ -5,14 +5,3 @@ app.directive("siteHeader", function () {
         replace: true
     }
 });
-
-app.directive("siteFooter", function () {
-    return {
-        restrict: "EA",
-        templateUrl: 'partials/siteFooter.html',
-        replace: true
-    }
-});
-
-
-
