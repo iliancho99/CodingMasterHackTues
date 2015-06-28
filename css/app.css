@@ -8,7 +8,7 @@
     font-family: Helvetica;
     font-size: 10px;
 }
-.PostTitle
+.PostText
 {
     font-family: Arial;
     font-size: 22px;
@@ -26,7 +26,7 @@
     font-size: 18px;
 }
 
-.post
+.post, .test
 {
     margin: 25px;
 }
@@ -38,34 +38,13 @@
     color: sienna;
 }
 
-.addPost, .addComment{
-    padding: 10px;
-}
-
 .panel-footer
 {
+    background-color: #adadad;
     color: #dff0d8;
 }
-ul.footer{
-    margin-top:10px;
-    text-align:center;
-}
-
-ul.footer li{
-    color:#333;
-    display:inline-block;
-}
-
-
-#footer{
-
-    bottom: -50px;
-    height: 50px;
-    left: 0;
-    position: absolute;
-    right: 0;
-}
-
-textarea{
-    resize: none;
+.Test{
+    border: 6px groove gray;
+    background-color: lightgrey;
+    color: sienna;
 }

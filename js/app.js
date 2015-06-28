@@ -18,6 +18,14 @@ if(sessionStorage['sessionToken']){
                 controller: "postController",
                 templateUrl: "partials/post.html"
             })
+            .when('/allTest', {
+                controller: "allTestController",
+                templateUrl: "partials/allTests.html"
+            })
+            .when('/test/:testId', {
+                controller: "testController",
+                templateUrl: "partials/test.html"
+            })
             .when('/logout', {
                 controller: "logoutController",
                 templateUrl: "partials/logout.html"

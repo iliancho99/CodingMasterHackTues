@@ -1,0 +1,13 @@
+<div class="container">
+    <div site-header></div>
+    <h1>Test:</h1>
+    <div class="test" ng-repeat="test in tests">
+        <a href="#/test/{{test.objectId}}">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <div class="TestTitle">{{test.title}}</div>
+                </div>
+            </div>
+        </a>
+    </div>
+</div>

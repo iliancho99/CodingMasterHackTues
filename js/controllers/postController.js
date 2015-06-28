@@ -28,7 +28,8 @@ app.controller("postController", ['$scope', '$routeParams', 'forumService', 'not
             forumService.addComment(comment)
                 .success(function (data) {
                     notifyService.showMsg("Add post successfully");
-                    $scope.post.comments.push(comment)
+                    $scope.post.comments.push(comment);
+                    $scope.addComment = {};
                 })
                 .error(function () {
                     notifyService.showError("Error!!!");

@@ -1,5 +1,4 @@
 app.controller('logoutController', ['$scope', 'userService','notifyService' , function ($scope, userService, notifyService) {
-
     userService.logoutUser()
         .success(function (data) {
             delete sessionStorage['sessionToken'];
@@ -8,6 +7,5 @@ app.controller('logoutController', ['$scope', 'userService','notifyService' , fu
         })
         .error(function (data) {
             notifyService.showError("Error!!!");
-        });
-
+        })
 }]);
