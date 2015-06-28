@@ -14,7 +14,7 @@ app.controller('testController', ['$scope', 'testService','notifyService', '$rou
                         var sec = 0;
 
                         $("#wrapper").append('<p>');
-                        var testName = "poll" + $scope.title;
+                        var testName = "poll" + $scope.test.title;
 
                         var clock = setInterval(function(){
                             $('p').text("Time left:" + min + ":" + (sec < 10 ? '0' + sec : sec));
@@ -67,19 +67,19 @@ app.controller('testController', ['$scope', 'testService','notifyService', '$rou
                                 poll[i] = " ";
                             }
 
-                            storageService.setObjectToLocalStorage("testName", poll);
+                            storageService.setObjectToLocalStorage(testName, poll);
                         }else{
                             loadAnswers();
                         }
 
                         function saveUserAnswers(question, answer) {
-                            var answers =  storageService.getObjectToLocalStorage("testName");
+                            var answers =  storageService.getObjectToLocalStorage(testName);
                             answers[question] = answer;
-                            storageService.setObjectToLocalStorage("testName", answers);
+                            storageService.setObjectToLocalStorage(testName, answers);
                         }
 
                         function loadAnswers() {
-                            var answers =  storageService.getObjectToLocalStorage("testName");
+                            var answers =  storageService.getObjectToLocalStorage(testName);
                             for(var q in answers) {
                                 var name = q;
                                 var value = answers[q];
@@ -91,7 +91,7 @@ app.controller('testController', ['$scope', 'testService','notifyService', '$rou
 
                         function checkAnswers(){
                             clearInterval(clock);
-                            var answers =  storageService.getObjectToLocalStorage('testName');
+                            var answers =  storageService.getObjectToLocalStorage(testName);
                             for (var q in answers) {
                                 var name = q;
                                 var value = answers[q];
